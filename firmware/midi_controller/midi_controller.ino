@@ -21,6 +21,8 @@ void loop()
     // Output a tone if key was pressed
     if (in_value == HIGH) {
         MIDI.sendNoteOn(40, 127, 1);      // Note 40 (E3), velocity 127, channel 1
+    } else {
+        MIDI.sendNoteOff(40, 0, 1);       // Stop the note!
     }
     
     // TODO: Come up with a way to choose which note to play based on which key
