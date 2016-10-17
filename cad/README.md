@@ -11,3 +11,10 @@ Let n = number of keys to be built
 * n x [FQP30N06L](http://www.digikey.com/short/395thr)
 * n x [100Ω resistor](http://www.digikey.com/short/395t9q)
 * n x [FSR 406](https://www.adafruit.com/products/1075)
+
+## Construction notes
+* White keys: 11.75” x 36” white corrugated plastic
+* Black keys: 7” x 18” black(?) corrugated plastic
+* Plywood backing: 3.5’ x 8’ x 0.5”
+* 0.25” foam on perimeter of each key, 2” wide?
+* 0.25” plywood fulcrum at top edge of each key, glued?
