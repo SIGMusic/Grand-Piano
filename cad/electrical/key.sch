@@ -6354,12 +6354,11 @@ Source: AVX .. aphvc.pdf</description>
 <plain>
 <text x="188.468" y="13.97" size="3.81" layer="97" align="center">ACM@UIUC
 SIGMusic</text>
-<wire x1="38.1" y1="165.1" x2="114.3" y2="165.1" width="0.1524" layer="97" style="longdash"/>
-<wire x1="114.3" y1="165.1" x2="114.3" y2="109.22" width="0.1524" layer="97" style="longdash"/>
+<wire x1="38.1" y1="160.02" x2="114.3" y2="160.02" width="0.1524" layer="97" style="longdash"/>
+<wire x1="114.3" y1="160.02" x2="114.3" y2="109.22" width="0.1524" layer="97" style="longdash"/>
 <wire x1="114.3" y1="109.22" x2="38.1" y2="109.22" width="0.1524" layer="97" style="longdash"/>
-<wire x1="38.1" y1="109.22" x2="38.1" y2="165.1" width="0.1524" layer="97" style="longdash"/>
-<text x="76.2" y="154.94" size="1.778" layer="97" align="bottom-center">Power supply
-(shared between multiple keys)</text>
+<wire x1="38.1" y1="109.22" x2="38.1" y2="160.02" width="0.1524" layer="97" style="longdash"/>
+<text x="76.2" y="152.4" size="1.778" layer="97" align="bottom-center">Power supply</text>
 <wire x1="127" y1="134.62" x2="228.6" y2="134.62" width="0.1524" layer="97" style="longdash"/>
 <wire x1="228.6" y1="134.62" x2="228.6" y2="60.96" width="0.1524" layer="97" style="longdash"/>
 <wire x1="228.6" y1="60.96" x2="127" y2="60.96" width="0.1524" layer="97" style="longdash"/>
