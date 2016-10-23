@@ -9,6 +9,8 @@ There's also a PDF version you can view if you don't have Eagle.
 
 **Microcontroller**
 * (1) [Arduino Uno](https://www.adafruit.com/product/50)
+* (1) [MIDI jack, right-angle female](http://www.digikey.com/short/3b7cbp)
+* (2) 220Ω resistor
 
 **Power supply**
 * (1) [12V 10A power supply](https://www.amazon.com/SUPERNIGHT-100-240V-5-5x2-1mm-Converter-Flexible/dp/B00LWQ2GS0)
