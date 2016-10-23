@@ -15,7 +15,7 @@ TODO
 
 ## Bill Of Materials
 
-* (1) [4’ x 8’ x 0.5” plywood sheet](http://www.homedepot.com/p/1-2-in-x-4-ft-x-8-ft-CDX-Ground-Contact-Pressure-Treated-Plywood-131876/206970940), cut to 3.5' wide - keep the 0.5' scrap!
+* (1) [4’ x 8’ x 0.25” plywood sheet](http://www.homedepot.com/p/Underlayment-Common-7-32-in-x-4-ft-x-8-ft-Actual-0-196-in-x-48-in-x-96-in-431178/203183010), cut to 3.5' wide - keep the 0.5' scrap!
 * (4) [24” x 36” natural corrugated plastic sheets](http://www.homedepot.com/p/24-in-x-36-in-x-0-157-in-Natural-Twin-Wall-Plastic-Sheet-1TW3624C/205828979)
 * (1) [24” x 36” black corrugated plastic sheets](http://www.homedepot.com/p/24-in-x-36-in-x-0-157-in-Black-Twin-Wall-Plastic-Sheet-COR3624BK/205437929)
 * (3?) [24" x 54" x 0.25” high-density polyethylene foam](https://www.grainger.com/product/GRAINGER-APPROVED-Foam-Sheet-5GDK0)
