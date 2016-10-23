@@ -6333,7 +6333,7 @@ Source: AVX .. aphvc.pdf</description>
 <part name="GND2" library="supply1" deviceset="GND" device=""/>
 <part name="P+3" library="supply1" deviceset="VCC" device=""/>
 <part name="R1" library="rcl" deviceset="R-US_" device="0207/10" value="1K"/>
-<part name="U2" library="my-custom" deviceset="LM2903P" device="" value="LM2903P"/>
+<part name="U2" library="my-custom" deviceset="LM2903P" device="" value="LM2903N"/>
 <part name="P+4" library="supply1" deviceset="VCC" device=""/>
 <part name="GND3" library="supply1" deviceset="GND" device=""/>
 <part name="R2" library="rcl" deviceset="R-US_" device="0207/10" value="3K"/>
