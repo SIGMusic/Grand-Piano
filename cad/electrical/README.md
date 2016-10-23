@@ -18,9 +18,9 @@ There are also PDF versions you can view if you don't have Eagle installed.
 * (1) [2.1mm DC jack to screw terminal adapter](https://www.adafruit.com/products/368)
 * (1) 1000µF capacitor
 * 12' x [16-gauge 2-conductor wire](http://www.homedepot.com/p/Southwire-By-the-Foot-16-2-Black-Stranded-Landscape-Lighting-Wire-55213199/204725046)
-* (13) [LD1117V50 regulator](http://www.digikey.com/short/395tz2)
-* (13) 100nF capacitor
-* (13) 10µF capacitor
+* (7) [LD1117V50 regulator](http://www.digikey.com/short/395tz2)
+* (7) 100nF capacitor
+* (7) 10µF capacitor
 
 **Keypress sensor**
 * (7) [half-size breadboard](https://www.adafruit.com/products/64)
