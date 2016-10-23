@@ -6332,7 +6332,7 @@ Source: AVX .. aphvc.pdf</description>
 <part name="GND1" library="supply1" deviceset="GND" device=""/>
 <part name="GND2" library="supply1" deviceset="GND" device=""/>
 <part name="P+3" library="supply1" deviceset="VCC" device=""/>
-<part name="R1" library="rcl" deviceset="R-US_" device="0207/10" value="1K"/>
+<part name="R1" library="rcl" deviceset="R-US_" device="0207/10" value="5.1K"/>
 <part name="U2" library="my-custom" deviceset="LM2903P" device="" value="LM2903N"/>
 <part name="P+4" library="supply1" deviceset="VCC" device=""/>
 <part name="GND3" library="supply1" deviceset="GND" device=""/>
@@ -6348,6 +6348,7 @@ Source: AVX .. aphvc.pdf</description>
 <part name="GND4" library="supply1" deviceset="GND" device=""/>
 <part name="JP1" library="pinhead" deviceset="PINHD-1X2" device="/90" value="LED STRIP"/>
 <part name="P+7" library="supply1" deviceset="+12V" device=""/>
+<part name="R6" library="rcl" deviceset="R-US_" device="0207/10" value="1K"/>
 </parts>
 <sheets>
 <sheet>
@@ -6359,11 +6360,11 @@ SIGMusic</text>
 <wire x1="114.3" y1="109.22" x2="38.1" y2="109.22" width="0.1524" layer="97" style="longdash"/>
 <wire x1="38.1" y1="109.22" x2="38.1" y2="160.02" width="0.1524" layer="97" style="longdash"/>
 <text x="76.2" y="152.4" size="1.778" layer="97" align="bottom-center">Power supply</text>
-<wire x1="127" y1="134.62" x2="228.6" y2="134.62" width="0.1524" layer="97" style="longdash"/>
-<wire x1="228.6" y1="134.62" x2="228.6" y2="60.96" width="0.1524" layer="97" style="longdash"/>
+<wire x1="127" y1="147.32" x2="228.6" y2="147.32" width="0.1524" layer="97" style="longdash"/>
+<wire x1="228.6" y1="147.32" x2="228.6" y2="60.96" width="0.1524" layer="97" style="longdash"/>
 <wire x1="228.6" y1="60.96" x2="127" y2="60.96" width="0.1524" layer="97" style="longdash"/>
-<wire x1="127" y1="60.96" x2="127" y2="134.62" width="0.1524" layer="97" style="longdash"/>
-<text x="177.8" y="124.46" size="1.778" layer="97" align="bottom-center">Keypress detector
+<wire x1="127" y1="60.96" x2="127" y2="147.32" width="0.1524" layer="97" style="longdash"/>
+<text x="177.8" y="137.16" size="1.778" layer="97" align="bottom-center">Keypress detector
 (force-sensitive resistor + comparator)</text>
 <wire x1="48.26" y1="93.98" x2="104.14" y2="93.98" width="0.1524" layer="97" style="longdash"/>
 <wire x1="104.14" y1="93.98" x2="104.14" y2="22.86" width="0.1524" layer="97" style="longdash"/>
@@ -6380,7 +6381,7 @@ SIGMusic</text>
 <instance part="P+2" gate="1" x="55.88" y="144.78"/>
 <instance part="GND1" gate="1" x="76.2" y="119.38"/>
 <instance part="GND2" gate="1" x="142.24" y="83.82"/>
-<instance part="P+3" gate="VCC" x="142.24" y="119.38"/>
+<instance part="P+3" gate="VCC" x="142.24" y="132.08"/>
 <instance part="R1" gate="G$1" x="142.24" y="93.98" rot="R90"/>
 <instance part="U2" gate="G$1" x="180.34" y="96.52"/>
 <instance part="P+4" gate="VCC" x="190.5" y="114.3"/>
@@ -6397,16 +6398,12 @@ SIGMusic</text>
 <instance part="GND4" gate="1" x="76.2" y="35.56"/>
 <instance part="JP1" gate="G$1" x="86.36" y="60.96"/>
 <instance part="P+7" gate="1" x="76.2" y="73.66"/>
+<instance part="R6" gate="G$1" x="142.24" y="121.92" rot="R90"/>
 </instances>
 <busses>
 </busses>
 <nets>
 <net name="VCC" class="0">
-<segment>
-<pinref part="P+3" gate="VCC" pin="VCC"/>
-<pinref part="FSR1" gate="G$1" pin="2"/>
-<wire x1="142.24" y1="116.84" x2="142.24" y2="114.3" width="0.1524" layer="91"/>
-</segment>
 <segment>
 <pinref part="P+4" gate="VCC" pin="VCC"/>
 <pinref part="U2" gate="G$1" pin="VCC"/>
@@ -6431,6 +6428,11 @@ SIGMusic</text>
 <pinref part="P+6" gate="VCC" pin="VCC"/>
 <wire x1="162.56" y1="73.66" x2="160.02" y2="73.66" width="0.1524" layer="91"/>
 <wire x1="160.02" y1="73.66" x2="160.02" y2="81.28" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="R6" gate="G$1" pin="2"/>
+<pinref part="P+3" gate="VCC" pin="VCC"/>
+<wire x1="142.24" y1="127" x2="142.24" y2="129.54" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="GND" class="0">
@@ -6535,6 +6537,13 @@ SIGMusic</text>
 <pinref part="JP1" gate="G$1" pin="2"/>
 <wire x1="76.2" y1="53.34" x2="76.2" y2="60.96" width="0.1524" layer="91"/>
 <wire x1="76.2" y1="60.96" x2="83.82" y2="60.96" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$1" class="0">
+<segment>
+<pinref part="R6" gate="G$1" pin="1"/>
+<pinref part="FSR1" gate="G$1" pin="2"/>
+<wire x1="142.24" y1="116.84" x2="142.24" y2="114.3" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>

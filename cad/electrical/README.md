@@ -25,9 +25,10 @@ There's also a PDF version you can view if you don't have Eagle.
 * (13) [LM2903N comparator](http://www.digikey.com/short/3bc118)
 * (13) 1KΩ resistor
 * (13) 3KΩ resistor
-* (13) 30KΩ resistor
-* (13) 4.3KΩ resistor
 * (13) 3.9KΩ resistor
+* (13) 4.3KΩ resistor
+* (13) 5.1KΩ resistor
+* (13) 30KΩ resistor
 
 **Light strip**
 * (5) [12V LED strip](http://www.lightingever.com/12v-led-strip-light-3528-4100057-dw.html)
