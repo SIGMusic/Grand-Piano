@@ -2,8 +2,9 @@
 
 ## Schematic
 
-key.sch is the Eagle schematic.
-There's also a PDF version you can view if you don't have Eagle.
+key.sch is the Eagle schematic for a single key,
+and controller.sch is for the Arduino sensing all the keys.
+There are also PDF versions you can view if you don't have Eagle installed.
 
 ## Bill Of Materials
 
