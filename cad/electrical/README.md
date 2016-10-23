@@ -20,7 +20,7 @@ There's also a PDF version you can view if you don't have Eagle.
 * (13) 10µF capacitor
 
 **Keypress sensor**
-* (13) [tiny breadboard](https://www.adafruit.com/products/65)
+* (13) [half-size breadboard](https://www.adafruit.com/products/64)
 * (13) [FSR 406](https://www.adafruit.com/products/1075)
 * (13) [LM2903N comparator](http://www.digikey.com/short/3bc118)
 * (13) 1KΩ resistor
