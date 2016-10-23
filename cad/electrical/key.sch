@@ -6325,7 +6325,7 @@ Source: AVX .. aphvc.pdf</description>
 </classes>
 <parts>
 <part name="FRAME1" library="frames" deviceset="A4L-LOC" device=""/>
-<part name="FSR1" library="my-custom" deviceset="FSR-SQUARE" device="" value="406"/>
+<part name="FSR1" library="my-custom" deviceset="FSR-SQUARE" device="" value="FSR406"/>
 <part name="U1" library="my-custom" deviceset="LD1117" device="" value="LD1117V50"/>
 <part name="P+1" library="supply1" deviceset="VCC" device=""/>
 <part name="P+2" library="supply1" deviceset="+12V" device=""/>
