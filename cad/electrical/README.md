@@ -30,6 +30,6 @@ There's also a PDF version you can view if you don't have Eagle.
 * (13) 3.9KΩ resistor
 
 **Light strip**
-* (5) [12V LED strip](http://www.lightingever.com/12v-led-strip-light-3528-4100057-ww.html)
+* (5) [12V LED strip](http://www.lightingever.com/12v-led-strip-light-3528-4100057-dw.html)
     - 2m per white key, 1m per black key
 * (13) [PSMN022-30PL MOSFET](http://www.digikey.com/short/391mv8)
