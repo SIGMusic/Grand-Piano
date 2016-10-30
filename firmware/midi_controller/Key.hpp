@@ -17,9 +17,9 @@ public:
     Key(Note note, int pin);
 
     bool isPressed();
+    void setPressed(bool pressed);
     int getPin();
-    void press();
-    void release();
+    Note getNote();
 };
 
 }

@@ -1,5 +1,4 @@
 #include "Key.hpp"
-#include "MIDI/MIDI.h"
 
 namespace GrandPiano
 {
@@ -14,27 +13,19 @@ bool Key::isPressed()
     return m_isPressed;
 }
 
+void Key::setPressed(bool pressed)
+{
+    m_isPressed = pressed;
+}
+
 int Key::getPin()
 {
     return m_pin;
 }
 
-void Key::press()
+Note Key::getNote()
 {
-    if (!m_isPressed)
-    {
-        MIDI.sendNoteOn(m_note.m_midiID, m_note.m_velocity, m_note.m_channel);
-        m_isPressed = true;
-    }
-}
-
-void Key::release()
-{
-    if (m_isPressed)
-    {
-        MIDI.sendNoteOff(m_note.m_midiID, m_note.m_velocity, m_note.m_channel);
-        m_isPressed = false;
-    }
+    return m_note;
 }
 
 }
