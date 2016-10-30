@@ -2,11 +2,11 @@
 #include "Note.hpp"
 #include "MIDI/MIDI.h"
 
+MIDI_CREATE_DEFAULT_INSTANCE();
+
 #define VELOCITY        127
 #define MIDI_CHANNEL    1
 #define NUM_KEYS        13
-
-MIDI_CREATE_DEFAULT_INSTANCE();
 
 using namespace GrandPiano;
 
@@ -58,15 +58,18 @@ void loop()
     for (int i = 0; i < NUM_KEYS; i++)
     {
         Key* pKey = &keys[i];
+        Note note = pKey->getNote();
 
         int pinStatus = digitalRead(pKey->getPin());
-        if (pinStatus == 1)
+        if (pinStatus == 1 && !pKey->isPressed())
         {
-            pKey->press();
+            MIDI.sendNoteOn(note.m_id, note.m_velocity, note.m_channel);
+            pKey->setPressed(true);
         }
-        else
+        else if (pinStatus == 0 && pKey->isPressed())
         {
-            pKey->release();
+            MIDI.sendNoteOff(note.m_id, note.m_velocity, note.m_channel);
+            pKey->setPressed(false);
         }
     }
 }
