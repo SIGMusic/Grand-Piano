@@ -1,0 +1,14 @@
+{
+  "name": "viz",
+  "version": "1.0.0",
+  "description": "The premise of this visualizer is to allow it to be streamed to some online website where we can then access it through the Siebel Center's video wall.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
