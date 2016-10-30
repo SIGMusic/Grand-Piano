@@ -1,30 +1,72 @@
-#include <MIDI.h>
+#include "Key.hpp"
+#include "Note.hpp"
+#include "MIDI/MIDI.h"
 
-#define PIN_KEY_IN   2
-#define PIN_MIDI_OUT 3
+#define VELOCITY        127
+#define MIDI_CHANNEL    1
+#define NUM_KEYS        13
 
 MIDI_CREATE_DEFAULT_INSTANCE();
 
+using namespace GrandPiano;
+
+// MIDI note definitions
+Note noteC4 { MIDI_C4, VELOCITY, MIDI_CHANNEL };
+Note noteD4 { MIDI_D4, VELOCITY, MIDI_CHANNEL };
+Note noteE4 { MIDI_E4, VELOCITY, MIDI_CHANNEL };
+Note noteF4 { MIDI_F4, VELOCITY, MIDI_CHANNEL };
+Note noteG4 { MIDI_G4, VELOCITY, MIDI_CHANNEL };
+Note noteA4 { MIDI_A4, VELOCITY, MIDI_CHANNEL };
+Note noteB4 { MIDI_B4, VELOCITY, MIDI_CHANNEL };
+Note noteC5 { MIDI_C5, VELOCITY, MIDI_CHANNEL };
+Note noteCSharp4 { MIDI_CSHARP4, VELOCITY, MIDI_CHANNEL };
+Note noteDSharp4 { MIDI_DSHARP4, VELOCITY, MIDI_CHANNEL };
+Note noteFSharp4 { MIDI_FSHARP4, VELOCITY, MIDI_CHANNEL };
+Note noteGSharp4 { MIDI_GSHARP4, VELOCITY, MIDI_CHANNEL };
+Note noteASharp4 { MIDI_ASHARP4, VELOCITY, MIDI_CHANNEL };
+
+// Key definitions
+Key keyC4(noteC4, 2);
+Key keyD4(noteD4, 3);
+Key keyE4(noteE4, 4);
+Key keyF4(noteF4, 5);
+Key keyG4(noteG4, 6);
+Key keyA4(noteA4, 7);
+Key keyB4(noteB4, 8);
+Key keyC5(noteC5, 9);
+Key keyCSharp4(noteCSharp4, A1);
+Key keyDSharp4(noteDSharp4, A2);
+Key keyFSharp4(noteFSharp4, A3);
+Key keyGSharp4(noteGSharp4, A4);
+Key keyASharp4(noteASharp4, A5);
+
+Key keys[] { keyC4, keyD4, keyE4, keyF4, keyG4, keyA4, keyB4, keyC5,
+             keyCSharp4, keyDSharp4, keyFSharp4, keyGSharp4, keyASharp4 };
+
 void setup()
 {
-    pinMode(PIN_KEY_IN, INPUT);
-    pinMode(PIN_MIDI_OUT, OUTPUT);
-    
-    MIDI.begin();
+    MIDI.begin(MIDI_CHANNEL);
+
+    for (int i = 0; i < NUM_KEYS; i++)
+    {
+        pinMode(keys[i].getPin(), INPUT);
+    }
 }
 
 void loop()
 {
-    // Read digital value from piano key
-    int in_value = digitalRead(PIN_KEY_IN);
-    
-    // Output a tone if key was pressed
-    if (in_value == HIGH) {
-        MIDI.sendNoteOn(40, 127, 1);      // Note 40 (E3), velocity 127, channel 1
-    } else {
-        MIDI.sendNoteOff(40, 0, 1);       // Stop the note!
+    for (int i = 0; i < NUM_KEYS; i++)
+    {
+        Key* pKey = &keys[i];
+
+        int pinStatus = digitalRead(pKey->getPin());
+        if (pinStatus == 1)
+        {
+            pKey->press();
+        }
+        else
+        {
+            pKey->release();
+        }
     }
-    
-    // TODO: Come up with a way to choose which note to play based on which key
-    // is being pressed.
 }
