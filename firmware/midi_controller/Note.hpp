@@ -21,7 +21,7 @@ namespace GrandPiano
 
 struct Note
 {
-    int m_midiID;
+    int m_id;
     int m_velocity;
     int m_channel;
 };
