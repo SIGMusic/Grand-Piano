@@ -43,7 +43,6 @@ void loop()
     for (int i = 0; i < NUM_KEYS; i++)
     {
         Key key = keys[i];
-        // Note note = key.getNote();
 
         int pinStatus = digitalRead(key.getPin());
         if (pinStatus == 1 && !key.isPressed())
