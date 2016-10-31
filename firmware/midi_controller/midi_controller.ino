@@ -1,5 +1,5 @@
 #include "Key.hpp"
-#include "Note.hpp"
+#include "Notes.hpp"
 #include "MIDI/MIDI.h"
 
 MIDI_CREATE_DEFAULT_INSTANCE();
