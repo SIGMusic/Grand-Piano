@@ -3,9 +3,9 @@
 namespace GrandPiano
 {
 
-Key::Key(Note note, int pin) :
+Key::Key(int note, int pin) :
         m_pin(pin),
-        m_note(note)
+        m_noteID(note)
 { }
 
 bool Key::isPressed()
@@ -23,9 +23,9 @@ int Key::getPin()
     return m_pin;
 }
 
-Note Key::getNote()
+int Key::getNote()
 {
-    return m_note;
+    return m_noteID;
 }
 
 }
