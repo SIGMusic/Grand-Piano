@@ -63,12 +63,12 @@ void loop()
         int pinStatus = digitalRead(key.getPin());
         if (pinStatus == 1 && !key.isPressed())
         {
-            MIDI.sendNoteOn(note.m_id, note.m_velocity, note.m_channel);
+            MIDI.sendNoteOn(note.m_id, VELOCITY, MIDI_CHANNEL);
             key.setPressed(true);
         }
         else if (pinStatus == 0 && key.isPressed())
         {
-            MIDI.sendNoteOff(note.m_id, note.m_velocity, note.m_channel);
+            MIDI.sendNoteOff(note.m_id, VELOCITY, MIDI_CHANNEL);
             key.setPressed(false);
         }
     }
