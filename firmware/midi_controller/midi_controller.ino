@@ -40,7 +40,7 @@ Key keyFSharp4(noteFSharp4, A3);
 Key keyGSharp4(noteGSharp4, A4);
 Key keyASharp4(noteASharp4, A5);
 
-Key keys[] { keyC4, keyD4, keyE4, keyF4, keyG4, keyA4, keyB4, keyC5,
+Key keys[NUM_KEYS] { keyC4, keyD4, keyE4, keyF4, keyG4, keyA4, keyB4, keyC5,
              keyCSharp4, keyDSharp4, keyFSharp4, keyGSharp4, keyASharp4 };
 
 void setup()
