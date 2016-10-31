@@ -28,23 +28,36 @@ Key keyASharp4(MIDI_ASHARP4, A5);
 Key keys[NUM_KEYS] { keyC4, keyD4, keyE4, keyF4, keyG4, keyA4, keyB4, keyC5,
              keyCSharp4, keyDSharp4, keyFSharp4, keyGSharp4, keyASharp4 };
 
+/**
+ * Initializes the MIDI serial connection and sets Arduino pin modes.
+ */
 void setup()
 {
+    // Initialize MIDI serial channel
     MIDI.begin(MIDI_CHANNEL);
 
+    // Set each pin to INPUT mode
     for (int i = 0; i < NUM_KEYS; i++)
     {
         pinMode(keys[i].getPin(), INPUT);
     }
 }
 
+/**
+ * Continually checks whether keys are being pressed and plays/stops notes
+ * accordingly.
+ */
 void loop()
 {
+    // Check 'pressed' status of each key
     for (int i = 0; i < NUM_KEYS; i++)
     {
         Key key = keys[i];
 
+        // Read 'pressed' status
         int pinStatus = digitalRead(key.getPin());
+
+        // Play or stop the note!
         if (pinStatus == 1 && !key.isPressed())
         {
             MIDI.sendNoteOn(key.getNote(), VELOCITY, MIDI_CHANNEL);
