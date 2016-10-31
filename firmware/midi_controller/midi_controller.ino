@@ -10,21 +10,6 @@ MIDI_CREATE_DEFAULT_INSTANCE();
 
 using namespace GrandPiano;
 
-// MIDI note definitions
-// Note noteC4 { MIDI_C4, VELOCITY, MIDI_CHANNEL };
-// Note noteD4 { MIDI_D4, VELOCITY, MIDI_CHANNEL };
-// Note noteE4 { MIDI_E4, VELOCITY, MIDI_CHANNEL };
-// Note noteF4 { MIDI_F4, VELOCITY, MIDI_CHANNEL };
-// Note noteG4 { MIDI_G4, VELOCITY, MIDI_CHANNEL };
-// Note noteA4 { MIDI_A4, VELOCITY, MIDI_CHANNEL };
-// Note noteB4 { MIDI_B4, VELOCITY, MIDI_CHANNEL };
-// Note noteC5 { MIDI_C5, VELOCITY, MIDI_CHANNEL };
-// Note noteCSharp4 { MIDI_CSHARP4, VELOCITY, MIDI_CHANNEL };
-// Note noteDSharp4 { MIDI_DSHARP4, VELOCITY, MIDI_CHANNEL };
-// Note noteFSharp4 { MIDI_FSHARP4, VELOCITY, MIDI_CHANNEL };
-// Note noteGSharp4 { MIDI_GSHARP4, VELOCITY, MIDI_CHANNEL };
-// Note noteASharp4 { MIDI_ASHARP4, VELOCITY, MIDI_CHANNEL };
-
 // Key definitions
 Key keyC4(MIDI_C4, 2);
 Key keyD4(MIDI_D4, 3);

@@ -19,13 +19,6 @@ namespace GrandPiano
 #define MIDI_GSHARP4 56
 #define MIDI_ASHARP4 58
 
-struct Note
-{
-    int m_id;
-    int m_velocity;
-    int m_channel;
-};
-
 }
 
 #endif /* NOTE_HPP */
