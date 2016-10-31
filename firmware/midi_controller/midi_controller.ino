@@ -57,19 +57,19 @@ void loop()
 {
     for (int i = 0; i < NUM_KEYS; i++)
     {
-        Key* pKey = &keys[i];
-        Note note = pKey->getNote();
+        Key key = keys[i];
+        Note note = key.getNote();
 
-        int pinStatus = digitalRead(pKey->getPin());
-        if (pinStatus == 1 && !pKey->isPressed())
+        int pinStatus = digitalRead(key.getPin());
+        if (pinStatus == 1 && !key.isPressed())
         {
             MIDI.sendNoteOn(note.m_id, note.m_velocity, note.m_channel);
-            pKey->setPressed(true);
+            key.setPressed(true);
         }
-        else if (pinStatus == 0 && pKey->isPressed())
+        else if (pinStatus == 0 && key.isPressed())
         {
             MIDI.sendNoteOff(note.m_id, note.m_velocity, note.m_channel);
-            pKey->setPressed(false);
+            key.setPressed(false);
         }
     }
 }
