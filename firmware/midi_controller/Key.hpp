@@ -24,6 +24,7 @@ private:
     bool m_isPressed;
     int m_pin;
     int m_noteID;
+    unsigned long m_lastChanged;
 
 public:
     /**
@@ -33,6 +34,12 @@ public:
      * @param pin    the Arduino pin to which this key is connected
      */
     Key(int noteID, int pin);
+    /**
+     * Creates a new instance of Key that is a copy of the existing instance.
+     *
+     * @param other  the Key to copy
+     */
+    Key(const Key & other);
 
     /**
      * Checks whether this key is currently being pressed.
@@ -45,8 +52,11 @@ public:
      * Sets whether this key is currently being pressed.
      *
      * @param pressed a bool indicating whether the key is being pressed
+     * 
+     * @return true if the change was successful, false if it was ignored
+     *         due to debouncing
      */
-    void setPressed(bool pressed);
+    bool setPressed(bool pressed);
 
     /**
      * Returns the Arduino pin number that this key is connected to.

@@ -63,7 +63,7 @@ void loop()
     // Check 'pressed' status of each key
     for (int i = 0; i < NUM_KEYS; i++)
     {
-        Key key = keys[i];
+        Key & key = keys[i];
 
         // Read 'pressed' status
         int pinStatus = digitalRead(key.getPin());
@@ -71,13 +71,15 @@ void loop()
         // Play or stop the note!
         if (pinStatus == 1 && !key.isPressed())
         {
-            MIDI.sendNoteOn(key.getNote(), VELOCITY, MIDI_CHANNEL);
-            key.setPressed(true);
+            if (key.setPressed(true)) {
+                MIDI.sendNoteOn(key.getNote(), VELOCITY, MIDI_CHANNEL);
+            }
         }
         else if (pinStatus == 0 && key.isPressed())
         {
-            MIDI.sendNoteOff(key.getNote(), VELOCITY, MIDI_CHANNEL);
-            key.setPressed(false);
+            if (key.setPressed(false)) {
+                MIDI.sendNoteOff(key.getNote(), VELOCITY, MIDI_CHANNEL);
+            }
         }
     }
 }

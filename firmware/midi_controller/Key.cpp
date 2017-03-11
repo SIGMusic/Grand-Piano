@@ -9,14 +9,24 @@
  * SOFTWARE.
  */
 
+#include <Arduino.h>
 #include "Key.hpp"
+
+const unsigned long DEBOUNCE_COOLDOWN_TIME = 100; // ms
 
 namespace GrandPiano
 {
 
 Key::Key(int note, int pin) :
         m_pin(pin),
-        m_noteID(note)
+        m_noteID(note),
+        m_lastChanged(0)
+{ }
+
+Key::Key(const Key & other) :
+        m_pin(other.m_pin),
+        m_noteID(other.m_noteID),
+        m_lastChanged(other.m_lastChanged)
 { }
 
 bool Key::isPressed()
@@ -24,9 +34,15 @@ bool Key::isPressed()
     return m_isPressed;
 }
 
-void Key::setPressed(bool pressed)
+bool Key::setPressed(bool pressed)
 {
-    m_isPressed = pressed;
+    if (millis() - m_lastChanged >= DEBOUNCE_COOLDOWN_TIME) {
+        m_isPressed = pressed;
+        m_lastChanged = millis();
+        return true;
+    } else {
+        return false;
+    }
 }
 
 int Key::getPin()
